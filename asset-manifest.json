@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/what-do-things-know-about-me/static/css/main.5f361e03.chunk.css",
+    "main.js": "/what-do-things-know-about-me/static/js/main.bbc1cc4c.chunk.js",
+    "main.js.map": "/what-do-things-know-about-me/static/js/main.bbc1cc4c.chunk.js.map",
+    "runtime-main.js": "/what-do-things-know-about-me/static/js/runtime-main.3de390b4.js",
+    "runtime-main.js.map": "/what-do-things-know-about-me/static/js/runtime-main.3de390b4.js.map",
+    "static/js/2.1e7d27d9.chunk.js": "/what-do-things-know-about-me/static/js/2.1e7d27d9.chunk.js",
+    "static/js/2.1e7d27d9.chunk.js.map": "/what-do-things-know-about-me/static/js/2.1e7d27d9.chunk.js.map",
+    "index.html": "/what-do-things-know-about-me/index.html",
+    "precache-manifest.e3c414fb362a5564bcf6810b75a6dfe9.js": "/what-do-things-know-about-me/precache-manifest.e3c414fb362a5564bcf6810b75a6dfe9.js",
+    "service-worker.js": "/what-do-things-know-about-me/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/what-do-things-know-about-me/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.1e7d27d9.chunk.js.LICENSE.txt": "/what-do-things-know-about-me/static/js/2.1e7d27d9.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/what-do-things-know-about-me/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3de390b4.js",
+    "static/js/2.1e7d27d9.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.bbc1cc4c.chunk.js"
+  ]
+}
