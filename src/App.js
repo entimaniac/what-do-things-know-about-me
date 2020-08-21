@@ -1,24 +1,77 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
+  const [clipboard, setClipboard] = useState();
+  const [geolocation, setGeolocation] = useState();
+  const [ip, setIp] = useState();
+
+  useEffect(() => {
+    fetch(`https://api.ipify.org/?format=json`)
+      .then((result) => result.json())
+      .then((data) => setIp(data.ip));
+  });
+
+  const readClipboard = () => {
+    navigator.clipboard.readText().then((text) => {
+      console.log(text);
+      setClipboard(text);
+    });
+  };
+
+  const getGeolocation = () => {
+    let options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0,
+    };
+
+    function success(pos) {
+      let crd = pos.coords;
+      let value = `Your current position is: 
+      \n  Latitude : ${crd.latitude} 
+      \n Longitude: ${crd.longitude} 
+      \n More or less ${crd.accuracy} meters.`;
+
+      setGeolocation(value);
+    }
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    }
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Totally available data</h2>
+      <p>cookieEnabled: {navigator.cookieEnabled}</p>
+      <p>appName: {navigator.appName}</p>
+      <p>appCodeName: {navigator.appCodeName}</p>
+      <p>product: {navigator.product}</p>
+
+      <p>appVersion: {navigator.appVersion}</p>
+      <p>userAgent: {navigator.userAgent}</p>
+      <p>platform: {navigator.platform}</p>
+      <p>language: {navigator.language}</p>
+      <p>onLine: {navigator.onLine}</p>
+      {/*<p>javaEnabled: {navigator.javaEnabled}</p>*/}
+      {/*<p>credentials: {navigator.credentials.}</p>*/}
+      {/*<p>plugins: {JSON.stringify(navigator.plugins)}</p>*/}
+
+      <p>ip address: {ip}</p>
+
+      <h2>Interesting but sorta safe things:</h2>
+      <p>
+        clipboard
+        <button onClick={readClipboard}>Read Clipboard</button>
+        {clipboard}
+      </p>
+      <p>
+        geolocation
+        <button onClick={getGeolocation}>Read GeoLocation</button>
+        {geolocation}
+      </p>
     </div>
   );
 }
