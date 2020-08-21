@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/what-do-things-know-about-me/precache-manifest.e3c414fb362a5564bcf6810b75a6dfe9.js"
+  "/what-do-things-know-about-me/precache-manifest.3da08cd77edbe065d9f88ecb107b0891.js"
 );
 
 self.addEventListener('message', (event) => {
