@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { v5 as uuidv5 } from 'uuid';
+import { v5 as uuidv5 } from "uuid";
 
 import "./App.css";
 
@@ -51,9 +51,9 @@ function App() {
       cookie: navigator.cookieEnabled,
     };
 
-      const MY_NAMESPACE = '091be5fd-9eb4-45af-a4d2-8a0b0f6c8369';
-      let id = uuidv5(JSON.stringify(data), MY_NAMESPACE);
-      setId(id)
+    const MY_NAMESPACE = "091be5fd-9eb4-45af-a4d2-8a0b0f6c8369";
+    let id = uuidv5(JSON.stringify(data), MY_NAMESPACE);
+    setId(id);
   };
 
   return (
@@ -63,17 +63,18 @@ function App() {
       <p>appName: {navigator.appName}</p>
       <p>appCodeName: {navigator.appCodeName}</p>
       <p>product: {navigator.product}</p>
-
       <p>appVersion: {navigator.appVersion}</p>
       <p>userAgent: {navigator.userAgent}</p>
       <p>platform: {navigator.platform}</p>
       <p>language: {navigator.language}</p>
       <p>onLine: {navigator.onLine}</p>
-      {/*<p>javaEnabled: {navigator.javaEnabled}</p>*/}
-      {/*<p>credentials: {navigator.credentials.}</p>*/}
-      {/*<p>plugins: {JSON.stringify(navigator.plugins)}</p>*/}
-
       <p>ip address: {ip}</p>
+
+      <p>height: {window.screen.height}</p>
+      <p>width: {window.screen.width}</p>
+      <p>availHeight: {window.screen.availHeight}</p>
+      <p>availWidth: {window.screen.availWidth}</p>
+      <p>devicePixelRatio: {window.devicePixelRatio}</p>
 
       <h2>Interesting but sorta safe things:</h2>
       <p>
@@ -86,7 +87,6 @@ function App() {
         <button onClick={getGeolocation}>Read GeoLocation</button>
         {geolocation}
       </p>
-
       <h2>Generate ID based on detected data </h2>
       <p>
         ID:
